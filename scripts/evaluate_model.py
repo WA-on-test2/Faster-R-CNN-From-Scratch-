@@ -1,7 +1,7 @@
 import argparse
 import torch
 from torch.utils.data import DataLoader
-
+import numpy as np
 from config.base_config import load_configuration
 from core.models.detector import ObjectDetectionModel
 from data.loaders.voc_loader import VOCDatasetLoader
@@ -25,7 +25,7 @@ def main():
     
     model = ObjectDetectionModel(
         config['model_params'],
-        num_classes=config['dataset_params']['num_classes'])
+        total_classes=config['dataset_params']['num_classes'])
     
     checkpoint_path = f"{config['train_params']['task_name']}/{config['train_params']['ckpt_name']}"
     model.load_state_dict(torch.load(checkpoint_path, map_location=device))
