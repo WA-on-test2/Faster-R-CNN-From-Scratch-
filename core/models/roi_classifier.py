@@ -13,7 +13,7 @@ from utils.common import stratified_sample_instances
 
 class RegionClassificationHead(nn.Module):
 
-    def __init__(self, network_config, total_classes, feature_channels):
+    def __init__(self, network_config, total_classes, in_channels):
         super(RegionClassificationHead, self).__init__()
         
         self.class_count = total_classes
@@ -28,7 +28,7 @@ class RegionClassificationHead(nn.Module):
         self.pooling_resolution = network_config['roi_pool_size']
         self.hidden_dimension = network_config['fc_inner_dim']
         
-        flattened_input_size = feature_channels * self.pooling_resolution * self.pooling_resolution#FC
+        flattened_input_size = in_channels * self.pooling_resolution * self.pooling_resolution#FC
         self.first_fc = nn.Linear(flattened_input_size, self.hidden_dimension)
         self.second_fc = nn.Linear(self.hidden_dimension, self.hidden_dimension)
         self.classification_fc = nn.Linear(self.hidden_dimension, self.class_count)
