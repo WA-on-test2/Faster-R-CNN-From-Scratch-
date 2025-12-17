@@ -31,7 +31,7 @@ def main():
     
     model = ObjectDetectionModel(
         config['model_params'],
-        num_classes=config['dataset_params']['num_classes'])
+        total_classes=config['dataset_params']['num_classes'])
     
     checkpoint_path = f"{config['train_params']['task_name']}/{config['train_params']['ckpt_name']}"
     model.load_state_dict(torch.load(checkpoint_path, map_location=device))
