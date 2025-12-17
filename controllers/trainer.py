@@ -1,9 +1,10 @@
 import torch
 import os
 from tqdm import tqdm
+import numpy as np
 from torch.optim.lr_scheduler import MultiStepLR
 from utils.common import get_computation_device, set_random_seed
-
+import random
 class ModelTrainer:
     def __init__(self, model, train_loader, config):
         self.model = model
