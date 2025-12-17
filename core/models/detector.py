@@ -25,7 +25,7 @@ class ObjectDetectionModel(nn.Module):
         # Initialize RPN
         self.proposal_network = ProposalGenerationNetwork(
             network_config['backbone_out_channels'],
-            scales=network_config['scales'],
+            anchor_sizes=network_config['scales'],
             anchor_ratios=network_config['aspect_ratios'],
             network_config=network_config)
         
