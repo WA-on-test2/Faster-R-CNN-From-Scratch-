@@ -97,7 +97,7 @@ def calculate_mean_average_precision(predictions_per_image, groundtruths_per_ima
 def _compute_ap_by_area(recall_array, precision_array):
 
     recall_array = np.concatenate(([0.0], recall_array, [1.0]))
-    precision_array = np.concatenate(([0.0], precision_array, [0.0])
+    precision_array = np.concatenate(([0.0], precision_array, [0.0]))
     for idx in range(precision_array.size - 1, 0, -1):
         precision_array[idx - 1] = np.maximum(precision_array[idx - 1], precision_array[idx])
     change_indices = np.where(recall_array[1:] != recall_array[:-1])[0]
