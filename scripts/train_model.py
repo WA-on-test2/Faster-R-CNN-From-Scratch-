@@ -29,7 +29,7 @@ def main():
 
     model = ObjectDetectionModel(
         config['model_params'],
-        num_classes=config['dataset_params']['num_classes'])
+        total_classes=config['dataset_params']['num_classes'])
     model.train()
     model.to(device)
     
