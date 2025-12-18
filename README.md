@@ -308,17 +308,6 @@ Mean Average Precision: 0.6842
 - **AP**: Area under the precision-recall curve for each class
 - **Higher is better**: mAP ranges from 0.0 to 1.0
 
-### Expected Results
-
-On VOC 2007 test set:
-- **This implementation**: ~61-62% mAP
-- **Original Faster R-CNN paper**: ~69.9% mAP
-
-The difference is due to:
-- Single batch size
-- Randomly initialized FC layers (vs. VGG FC layers)
-- Simplified training schedule
-
 ---
 
 ## 🎨 Inference
