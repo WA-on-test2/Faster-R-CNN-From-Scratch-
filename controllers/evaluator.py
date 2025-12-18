@@ -48,7 +48,7 @@ class ModelEvaluator:
                 all_ground_truths.append(gt_dict)
         
         mean_ap, class_aps = calculate_mean_average_precision(
-            all_predictions, all_ground_truths, method='interp')
+            all_predictions, all_ground_truths, aggregation_method='interp')
         
         print('\n=== Evaluation Results ===')
         print('Class-wise Average Precisions:')
