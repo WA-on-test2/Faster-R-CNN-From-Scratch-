@@ -1,5 +1,6 @@
 import torch
 from tqdm import tqdm
+import numpy as np
 from utils.common import get_computation_device
 from utils.evaluation_metrics import calculate_mean_average_precision
 
